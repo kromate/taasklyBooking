@@ -6,7 +6,7 @@
 export default {
     keepalive: true,
     head: {
-        title: 'NStarter - Less set-up, more shipping',
+        title: 'Bookings - Simplified Bookings, Amplified Business',
         htmlAttrs: { lang: 'en' },
         viewport: 'width=device-width,initial-scale=1,viewport-fit=cover',
         bodyAttrs: { class: 'overflow-x-hidden' },
@@ -19,45 +19,45 @@ export default {
             },
             {
                 name: 'title',
-                content: 'NStarter - Less set-up, more shipping'
+                content: 'Bookings - Simplified Bookings, Amplified Business'
             },
             {
                 name: 'description',
-                content: 'A modern, feature-rich starter template for Nuxt 3 projects, integrating Firebase, Lucide Icons, Radix Vue, and TailwindCSS.'
+                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
             },
             {
                 name: 'twitter:title',
-                content: 'NStarter - Less set-up, more shipping'
+                content: 'Bookings - Simplified Bookings, Amplified Business'
             },
-            { name: 'twitter:image', content: 'https://nuxt3-starter-template-five.vercel.app/og.png' },
+            { name: 'twitter:image', content: 'https://feedback.taaskly.site/og2.png' },
             {
                 name: 'twitter:description',
-                content: 'A modern, feature-rich starter template for Nuxt 3 projects, integrating Firebase, Lucide Icons, Radix Vue, and TailwindCSS.'
+                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
             },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@kromate_24' },
             { name: 'twitter:creator', content: '@kromate_24' },
             {
                 property: 'og:title',
-                content: 'NStarter | Less set-up, more shipping'
+                content: 'Bookings | Simplified Bookings, Amplified Business'
             },
             { name: 'google-site-verification', content: 'tWttF6w3RHPlNPm5u7KSRgh4lgkRUZ2Bwl6QzECjY18' },
             { property: 'og:type', content: 'website' },
-            { property: 'og:url', content: 'https://NStarter.xyz/' },
-            { property: 'og:image', content: 'https://nuxt3-starter-template-five.vercel.app/og.png' },
-            { property: 'og:image:secure_url', content: 'https://nuxt3-starter-template-five.vercel.app/og.png' },
+            { property: 'og:url', content: 'https://bookings.taaskly.site/' },
+            { property: 'og:image', content: 'https://bookings.taaskly.site/og2.png' },
+            { property: 'og:image:secure_url', content: 'https://bookings.taaskly.site/og2.png' },
             { property: 'og:image:type', content: 'image/png' },
-            { property: 'og:site_name', content: 'NStarter' },
+            { property: 'og:site_name', content: 'Bookings' },
             {
                 property: 'og:description',
-                content: 'A modern, feature-rich starter template for Nuxt 3 projects, integrating Firebase, Lucide Icons, Radix Vue, and TailwindCSS.'
+                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
             },
 
             { name: 'format-detection', content: 'telephone=no' }
         ],
 
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
+            { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' },
             { href: 'https://fonts.googleapis.com', rel: 'preconnect' },
             { href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: true }
 
