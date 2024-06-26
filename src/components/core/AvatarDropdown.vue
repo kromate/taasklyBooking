@@ -22,15 +22,7 @@
 
 <script setup lang="ts">
 
-import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-
-  DropdownMenuPortal,
-  DropdownMenuRoot,
-
-  DropdownMenuTrigger
-} from 'radix-vue'
+import { DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenuRoot, DropdownMenuTrigger } from 'radix-vue'
 import { useSignin } from '@/composables/auth/auth'
 import { useUser } from '@/composables/auth/user'
 
