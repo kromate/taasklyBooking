@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     const exists = !querySnapshot.empty
 
   return { exists }
-  } catch (error) {
+  } catch (error:any) {
     console.log(error)
     return { exists: false, error: error.message }
   }
