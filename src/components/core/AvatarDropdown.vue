@@ -4,8 +4,8 @@
 			class="border border-dark flex gap-2.5 items-center py-2.5 px-3 rounded-md"
 			aria-label="Customise options"
 		>
-			<Avatar :src="user!.photoURL" :name="user!.displayName" :size="28" />
-			<span class="text-sm">	{{ user!.displayName }}</span>
+			<Avatar :src="user!.photoURL" :name="user!.displayName ?? userProfile!.name" :size="28" />
+			<span class="text-sm">	{{ user!.displayName ?? userProfile!.name }}</span>
 		</DropdownMenuTrigger>
 		<DropdownMenuPortal>
 			<DropdownMenuContent
@@ -26,7 +26,7 @@ import { DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenu
 import { useSignin } from '@/composables/auth/auth'
 import { useUser } from '@/composables/auth/user'
 
-const { user } = useUser()
+const { user, userProfile } = useUser()
 
 
 </script>

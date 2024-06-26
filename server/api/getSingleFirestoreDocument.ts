@@ -1,5 +1,5 @@
 
-import { serverside_db } from '../utils/firebaseServer'
+import { db } from '../utils/firebaseServer'
 
 
 
@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const docRef = serverside_db.collection(collection).doc(id)
+    const docRef = db.collection(collection).doc(id)
       const docSnap = await docRef.get()
       if (docSnap.exists) {
       return { data: docSnap.data() }

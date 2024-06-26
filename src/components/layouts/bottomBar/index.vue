@@ -7,7 +7,7 @@
 			</p>
 		</nuxt-link>
 		<div class="flex flex-col items-center" @click="drawerFunction()">
-			<component :is="menu" class="w-5" />
+			<component :is="Menu" class="w-5" />
 			<p class="text-xs font-medium">
 				more
 			</p>
@@ -17,7 +17,9 @@
 
 <script setup lang="ts">
 
-import menu from '@/assets/icons/src/menu.vue'
+import { Menu } from 'lucide-vue-next'
+
+Menu
 
 type RouteType = {
     name: string,

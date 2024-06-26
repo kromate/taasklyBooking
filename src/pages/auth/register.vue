@@ -40,7 +40,7 @@
 					class="input-field"
 					required
 				>
-				<EyeIcon class="w-5 h-5 absolute top-[53%] right-4" @click="toggleShow" />
+				<EyeIcon class="w-5 h-5 absolute top-[53%] right-4 cursor-pointer" @click="toggleShow" />
 			</div>
 			<div class="flex justify-between items-center text-xs w-full">
 				<label for="remember" class="mb-0">

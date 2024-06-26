@@ -29,6 +29,9 @@ export const useUser = () => {
         await fetchUserProfile(user.uid)
         _userCookie.value = JSON.stringify(user)
     }
+    const setUserProfile = (profile: ProfileType) => {
+        _userProfileCookie.value = profile as any
+    }
     const userProfile = computed(() => {
         if (_userProfileCookie.value) return _userProfileCookie.value
         else
@@ -44,7 +47,7 @@ export const useUser = () => {
     const isLoggedIn = computed(() => { return !!user.value })
     const username = computed(() => { return userProfile.value ? userProfile.value.username : null })
     const id = computed(() => { return user.value ? user.value.uid : null })
-    const is_admin = computed(() => { return userProfile.value ? userProfile.value.is_admin : false })
+
 
     const clearUser = () => {
         _userCookie.value = null
@@ -58,7 +61,8 @@ export const useUser = () => {
     const fetchUserProfile = async (uid:string) => {
         if (user.value && uid) {
             await getSingleFirestoreDocument('users', uid, _userProfileCookie)
+            return _userProfileCookie
         }
     }
-    return { setUser, clearUser, user, userProfile, redirectUrl, isLoggedIn, username, id, is_admin, fetchUserProfile }
+    return { setUser, clearUser, user, userProfile, redirectUrl, isLoggedIn, username, id, fetchUserProfile, setUserProfile }
 }

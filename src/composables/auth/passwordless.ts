@@ -1,9 +1,9 @@
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink, User } from 'firebase/auth'
-import { useAuthModal } from '../core/modals'
 import { authCredentienalsForm } from './auth'
+import { afterAuthCheck } from './utils'
 import { useUser } from '@/composables/auth/user'
-import { authRef } from '~~/src/firebase/auth'
-import { useAlert } from '~~/src/composables/core/notification'
+import { authRef } from '@/firebase/auth'
+import { useAlert } from '@/composables/core/notification'
 
 
 
@@ -56,16 +56,7 @@ export const usePasswordlessSignin = () => {
 
             const user = result.user as User as any
             await useUser().setUser(user as User)
-			const token = await user?.auth.currentUser.getIdTokenResult()
-			const hasProfile = token?.claims?.hasUpdatedProfile
-
-
-			if (!hasProfile) await useRouter().push('/auth/profile')
-
-			const redirectUrl = useUser().redirectUrl.value
-			useUser().redirectUrl.value = null
-			await useRouter().push(redirectUrl ?? '/dashboard')
-			useAuthModal().closeAll()
+			await afterAuthCheck(user)
 
 			authCredentienalsForm.loading.value = false
         } catch (e: any) {

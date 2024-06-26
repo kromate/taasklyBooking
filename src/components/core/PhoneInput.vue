@@ -14,42 +14,49 @@
 			required
 			@input="handleInput"
 		>
-		<!-- <icon v-if="phone_number && !disabled" name="close-fill" class="w-4 absolute top-[58%] right-4 cursor-pointer" @click="clearInput" /> -->
+		<XCircle v-if="phone_number && !disabled" name="close-fill" class="w-4 absolute top-[54%] right-4 cursor-pointer" @click="clearInput" />
 
 		<div ref="target" class="flex flex-col absolute top-[50%]">
-			<DropdownMenuRoot v-slot="{ open }">
-				<DropdownMenuTrigger as="button" :disabled="disabled" class="cursor-pointer flex items-center gap-2.5 p-1.5 px-2 pl-4 py-0 bg-transparent border-r border-neut3">
-					<span class="text-xl">{{ selectedCountry.flag }}</span>
-					<span class="truncate">{{ selectedCountry.dial_code }}</span>
-					<icon name="down" :class="['ml-1 w-4 duration-300', open ? 'rotate-180' : '']" />
-				</DropdownMenuTrigger>
+			<ClientOnly>
+				<DropdownMenuRoot v-slot="{ open }">
+					<DropdownMenuTrigger as="button" :disabled="disabled" class="cursor-pointer flex items-center gap-2.5 p-1.5 px-2 pl-4 py-0 bg-transparent border-r border-neut3">
+						<span class="text-xl">{{ selectedCountry.flag }}</span>
+						<span class="truncate">{{ selectedCountry.dial_code }}</span>
+						<ChevronDown name="down" :class="['ml-1 w-4 duration-300', open ? 'rotate-180' : '']" />
+					</DropdownMenuTrigger>
 
-				<DropdownMenuContent class="bg-white  border border-dark z-20 px-8 py-6  absolute top-[2rem] -left-[60px] w-[325px] rounded overflow-hidden max-h-96 min-h-28">
-					<section class="relative w-full flex flex-col gap-6 text-sm ">
-						<input
-							v-model="searchQuery"
-							type="text"
-							placeholder="Search country"
-							class="p-2 border-b border-gray-300 !outline-none absolute top-0 w-full"
-						>
-						<div class="flex flex-col gap-6 text-sm mt-14 overflow-y-auto md:max-h-96 max-h-40 hide-scrollbar">
-							<DropdownMenuItem v-for="country in filteredCountries" :key="country.code" class="flex items-center gap-3 !outline-none" @select="onDropdownClick(country)">
-								<span class="text-xl">{{ country.flag }}</span>
-								<p class="cursor-pointer flex items-center text-base">
-									{{ country.name }}
-								</p>
-								<span class="ml-auto text-neut5">{{ country.dial_code }}</span>
-							</DropdownMenuItem>
-						</div>
-					</section>
-				</DropdownMenuContent>
-			</DropdownMenuRoot>
+					<DropdownMenuContent class="bg-white  border border-dark z-20 px-8 py-6  absolute top-[2rem] -left-[60px] w-[325px] rounded overflow-hidden max-h-96 min-h-28">
+						<section class="relative w-full flex flex-col gap-6 text-sm ">
+							<input
+								v-model="searchQuery"
+								type="text"
+								placeholder="Search country"
+								class="p-2 border-b border-gray-300 !outline-none absolute top-0 w-full"
+							>
+							<div class="flex flex-col gap-6 text-sm mt-14 overflow-y-auto md:max-h-96 max-h-40 hide-scrollbar">
+								<DropdownMenuItem v-for="country in filteredCountries" :key="country.code" class="flex items-center gap-3 !outline-none" @select="onDropdownClick(country)">
+									<span class="text-xl">{{ country.flag }}</span>
+									<p class="cursor-pointer flex items-center text-base">
+										{{ country.name }}
+									</p>
+									<span class="ml-auto text-neut5">{{ country.dial_code }}</span>
+								</DropdownMenuItem>
+							</div>
+						</section>
+					</DropdownMenuContent>
+				</DropdownMenuRoot>
+			</ClientOnly>
 		</div>
 	</div>
 </template>
+
+
+
 <script setup lang="ts">
 import { DropdownMenuRoot, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from 'radix-vue'
+import { ChevronDown, XCircle } from 'lucide-vue-next'
 import countries from '@/composables/helpers/countries'
+
 
 interface Country {
   name: string;

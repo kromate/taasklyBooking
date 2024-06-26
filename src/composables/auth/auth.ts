@@ -1,8 +1,14 @@
 import { User } from 'firebase/auth'
 import { useAuthModal } from '../core/modals'
+import { afterAuthCheck } from './utils'
 import { useUser } from '@/composables/auth/user'
 import { googleAuth, signOutUser } from '@/firebase/auth'
 import { useAlert } from '@/composables/core/notification'
+
+
+
+
+
 
 export const authCredentienalsForm = {
 		email: ref(''),
@@ -26,9 +32,7 @@ export const useSignin = () => {
       const user = await googleAuth() as User
       await useUser().setUser(user)
 
-      const redirectUrl = useUser().redirectUrl.value
-      useUser().redirectUrl.value = null
-      await router.push(redirectUrl ?? '/dashboard')
+      await afterAuthCheck(user)
 
       loading.value = false
     } catch (err) {
