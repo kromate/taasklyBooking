@@ -16,7 +16,7 @@ const { clearUser } = useUser()
 const { signOut } = useSignin()
 
 definePageMeta({
-	layout: 'default',
+	layout: 'dashboard',
 	middleware: 'is-authenticated'
 })
 </script>

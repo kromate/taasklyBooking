@@ -1,5 +1,5 @@
 <template>
-	<div class="polkadot min-h-screen">
+	<div class=" min-h-screen">
 		<section class="flex flex-col">
 			<HeroNav />
 			<slot />

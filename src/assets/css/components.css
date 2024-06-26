@@ -132,6 +132,17 @@
 
 }
 
+    .pc {
+        @apply !hidden lg:!flex;
+    }
+    
+    .tab {
+        @apply !hidden md:!flex;
+    }
+
+    .mobile {
+        @apply !flex lg:!hidden;
+    }
 input:disabled,
 textarea:disabled,
 select:disabled {

@@ -70,7 +70,7 @@ export const useCreateProfile = () => {
 				}
 				const redirectUrl = useUser().redirectUrl.value
 				useUser().redirectUrl.value = null
-				location.assign(redirectUrl ?? '/main/business')
+				location.assign(redirectUrl ?? '/dashboard')
 				useAlert().openAlert({ type: 'SUCCESS', msg: res.msg })
 
 				loading.value = false

@@ -25,13 +25,10 @@ export const useSignin = () => {
     try {
       const user = await googleAuth() as User
       await useUser().setUser(user)
-      const token = await user.getIdTokenResult()
-      const hasProfile = token?.claims?.hasUpdatedProfile
 
-      if (!hasProfile) await router.push('/auth/profile')
       const redirectUrl = useUser().redirectUrl.value
       useUser().redirectUrl.value = null
-      await router.push(redirectUrl ?? '/main/business')
+      await router.push(redirectUrl ?? '/dashboard')
 
       loading.value = false
     } catch (err) {
@@ -46,6 +43,7 @@ export const useSignin = () => {
       await signOutUser()
       if (location.pathname === '/auth/profile') await router.push('/auth/login')
       useAuthModal().closeLogout()
+      location.reload()
       useAlert().openAlert({ type: 'SUCCESS', msg: 'Signed out successfully' })
     } catch (err) {
       console.error('Sign Out Error:', err)

@@ -1,0 +1,99 @@
+<template>
+	<aside
+		class="pc min-h-screen flex-col justify-between w-[20%] max-w-[15rem] bg-transparent  fixed inset-y-0 z-50 "
+	>
+		<div class="h-full relative py-4 w-full">
+			<div class="w-full flex justify-start pl-6">
+				<img
+					src="/lt.svg"
+					alt="logo"
+					class="w-36"
+				>
+			</div>
+
+			<div class="relative mt-[40px] flex flex-col gap-2">
+				<div v-for="n in routes" :key="n.name" class="relative px-4">
+					<span class="w-full flex flex-col gap-4">
+
+						<nuxt-link
+							:to="n.route"
+							class="flex items-center black use-hover"
+							:style="{ backgroundColor: $route.path === n.route ? n.bg : '',
+								color: $route.path === n.route ? n.color : '',
+								'--link-bg-color': $route.path === n.route ? n.color : ''
+							}"
+						>
+							<component :is="n.icon" class="mr-4 w-5" />
+							<p class="text-sm inter">
+								{{ n.name }}
+							</p>
+						</nuxt-link>
+
+
+
+					</span>
+				</div>
+			</div>
+
+
+			<div class=" absolute bottom-6 flex flex-col gap-2 w-full p-4">
+				<slot name="footer" />
+			</div>
+		</div>
+	</aside>
+</template>
+
+<script lang="ts" setup>
+
+
+type RouteType = {
+	route: string;
+	name: string;
+	icon: string | any;
+	bg?: string;
+	color?: string;
+}
+
+defineProps({
+	routes: {
+		type: Array as PropType<RouteType[]>,
+		required: true,
+		default: () => []
+	}
+})
+
+</script>
+
+<style scoped lang="scss">
+:deep(.bg-shadow) {
+	box-shadow: 0px 2px 16px rgba(31, 41, 55, 0.12);
+}
+:deep(a, .btn_link) {
+	@apply text-grey_two w-full h-11 px-6 pr-3 text-4xl duration-75 rounded-md  ;
+&:hover.use-hover{
+	@apply bg-hover;
+}
+}
+
+
+/* exact link will show the primary color for only the exact matching link */
+:deep(a.router-link-exact-active.black) {
+	@apply text-dark font-semibold  ;
+	// color: var(--primary);
+	border-color: var(--primary);
+	background-color: #F4F3FF;
+	// & > svg {
+	// 	color: var(--primary);
+	// }
+	& ::before{
+		content: '';
+		@apply absolute left-0 top-0 w-1.5 h-full border  border-dark rounded-full;
+		  background-color: var(--link-bg-color);
+
+	}
+}
+
+:deep(:focus) {
+	outline: none;
+}
+</style>

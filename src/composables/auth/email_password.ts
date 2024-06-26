@@ -22,7 +22,7 @@ export const useEmailAndPassword = () => {
         if (!hasProfile) await router.push('/auth/profile')
         const redirectUrl = useUser().redirectUrl.value
         useUser().redirectUrl.value = null
-        await router.push(redirectUrl ?? '/main/business')
+        await router.push(redirectUrl ?? '/dashboard')
 
         authCredentienalsForm.loading.value = false
     } catch (err: any) {
@@ -43,7 +43,7 @@ export const useEmailAndPassword = () => {
         if (!hasProfile) await router.push('/auth/profile')
         const redirectUrl = useUser().redirectUrl.value
         useUser().redirectUrl.value = null
-        await router.push(redirectUrl ?? '/main/business')
+        await router.push(redirectUrl ?? '/dashboard')
 
         authCredentienalsForm.loading.value = false
     } catch (err: any) {

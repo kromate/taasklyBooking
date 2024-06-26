@@ -47,8 +47,8 @@ console.log(hasProfile)
             const redirectUrl = useUser().redirectUrl.value
             useUser().redirectUrl.value = null
             console.log(redirectUrl)
-            console.log('/main/business')
-            await router.push(redirectUrl ?? '/main/business')
+            console.log('/dashboard')
+            await router.push(redirectUrl ?? '/dashboard')
 
             authCredentienalsForm.loading.value = false
         } catch (err: any) {
