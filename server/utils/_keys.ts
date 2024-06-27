@@ -17,4 +17,4 @@ export const configs = {
 
 
 
-console.log(configs)
+

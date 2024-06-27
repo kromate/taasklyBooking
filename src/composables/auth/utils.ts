@@ -5,6 +5,7 @@ export const afterAuthCheck = async (user: User | null) => {
     if (user) {
         const { fetchUserProfile } = useUser()
         const userProfile = await fetchUserProfile(user.uid) as any
+        console.log(userProfile)
         if (!userProfile?.value?.name) {
             useRouter().push('/auth/profile')
             return

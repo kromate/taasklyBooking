@@ -19,7 +19,7 @@ export default function firebaseServer() {
     }
     return getApp()
     } catch (error) {
-        console.log('firebaseServer', error)
+
     }
 }
 export const useFirestore = (databaseName = '(default)'): Firestore => {

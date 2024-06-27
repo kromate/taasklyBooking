@@ -4,14 +4,13 @@ import { db } from '../utils/firebaseServer'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
- console.log(body)
+
 
 try {
     await db.collection('users').doc(body.id).set(body)
     const availability_id = await createAvailability(body.id)
     await createBookingTypes(body.id, availability_id)
     } catch (e:any) {
-        console.log(e)
         throw new Error(`Error creating user profile: ${e.message}`)
     }
 

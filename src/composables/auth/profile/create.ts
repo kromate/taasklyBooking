@@ -3,6 +3,7 @@ import { ProfileType } from '../types/profile'
 import { convertObjWithRefToObj } from '@/composables/utils/formatter'
 import { useAlert } from '@/composables/core/notification'
 import { useUser } from '@/composables/auth/user'
+import { callFirebaseFunction } from '@/firebase/functions'
 
 
 
@@ -34,7 +35,8 @@ export const useCreateProfile = () => {
 
 		try {
 			const sent_date = { id: id.value, ...convertObjWithRefToObj(profileFormState), created_at: new Date().toISOString(), updated_at: new Date().toISOString() } as ProfileType
-			const res = await createUserProfile(sent_date)
+
+			const res = await callFirebaseFunction('createUserProfileForBooking', sent_date) as any
 			if (res.success) {
 				setUserProfile(sent_date)
 				useRouter().push('/dashboard')
@@ -69,7 +71,7 @@ const createUserProfile = async (sent_data: any) => {
     body: sent_data
 			})
 
-	console.log(data.value)
+
 	return { success: data.value?.success, msg: data.value!.msg }
 }
 
@@ -83,14 +85,11 @@ export const useUsername = () => {
 		profileFormState.username.value = profileFormState.username.value.replace(/ /g, '').toLowerCase()
 
 
-		const { data, error } = await useFetch('/api/checkUsername', {
-    method: 'POST',
-    body: { username: profileFormState.username.value }
-  })
+			const { exists } = await callFirebaseFunction('checkUsernameForBooking', { username: profileFormState.username.value }) as any
 
 
 
-		if (data.value!.exists) {
+		if (exists) {
 			isUsernameAvailable.value = false
 		} else {
 			isUsernameAvailable.value = true
