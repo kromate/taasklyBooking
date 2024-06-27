@@ -14,9 +14,10 @@ export default defineEventHandler(async (event) => {
     const usernamesRef = db.collection('users').where('username', '==', username)
 
 console.log(usernamesRef)
-  const querySnapshot = await usernamesRef.get()
+    const querySnapshot = await usernamesRef.get()
+    console.log(querySnapshot)
     const exists = !querySnapshot.empty
-
+console.log(exists)
   return { exists }
   } catch (error:any) {
     console.log(error)
