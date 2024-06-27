@@ -9,7 +9,8 @@ import { configs } from './_keys'
 
 
 export default function firebaseServer() {
-    if (getApps().length === 0) {
+    try {
+            if (getApps().length === 0) {
         return initializeApp({
             // @ts-ignore
             credential: cert(configs)
@@ -17,9 +18,12 @@ export default function firebaseServer() {
         })
     }
     return getApp()
+    } catch (error) {
+        console.log('firebaseServer', error)
+    }
 }
 export const useFirestore = (databaseName = '(default)'): Firestore => {
-  const app = firebaseServer()
+  const app = firebaseServer()!
   return getFirestore(app, databaseName)
 }
 export const db: Firestore = process.env.NODE_ENV === 'development' ? useFirestore('(default)') : useFirestore('bookings')
