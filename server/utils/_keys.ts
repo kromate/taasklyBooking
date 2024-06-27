@@ -1,3 +1,7 @@
+/// <reference types="vite/client" />
+console.log(import.meta)
+console.log(import.meta.env)
+console.log(process.env)
 export const configs = {
     type: import.meta.env.TYPE,
     project_id: import.meta.env.PROJECT_ID,
