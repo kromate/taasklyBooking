@@ -10,9 +10,10 @@ export default defineEventHandler(async (event) => {
     return { exists: false, error: 'Username is required' }
   }
   try {
+    console.log(db)
     const usernamesRef = db.collection('users').where('username', '==', username)
 
-
+console.log(usernamesRef)
   const querySnapshot = await usernamesRef.get()
     const exists = !querySnapshot.empty
 
