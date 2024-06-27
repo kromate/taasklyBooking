@@ -12,15 +12,15 @@ export default defineEventHandler(async (event) => {
   try {
     console.log(db)
     const usernamesRef = db.collection('users').where('username', '==', username)
-
+setResponseStatus(event, 200)
 console.log(usernamesRef)
     const querySnapshot = await usernamesRef.get()
     console.log(querySnapshot)
     const exists = !querySnapshot.empty
 console.log(exists)
   return { exists }
-  } catch (error:any) {
-    console.log(error)
-    return { exists: false, error: error.message }
+  } catch (error: any) {
+      console.log(error)
+    throw createError({ status: 500, message: error.message })
   }
 })
