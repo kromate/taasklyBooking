@@ -8,7 +8,7 @@
 				Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.
 			</p>
 			<div class="flex gap-4 items-center w-full justify-center md:justify-start">
-				<nuxt-link to="/dashboard" class="bg-black text-white md:py-4 py-3 md:px-6 px-8 rounded-md md:text-[17px]">
+				<nuxt-link to="/booking-types" class="bg-black text-white md:py-4 py-3 md:px-6 px-8 rounded-md md:text-[17px]">
 					Create a booking page
 				</nuxt-link>
 				<!-- <a class="md:text-xl font-semibold underline " href="https://www.youtube.com/watch?v=f3XQRsgvRTU&ab_channel=Kromate" target="_blank" rel="noopener noreferrer">Watch a Demo</a> -->

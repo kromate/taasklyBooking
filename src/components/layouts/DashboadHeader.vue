@@ -1,8 +1,12 @@
 <template>
 	<header class="container flex items-center justify-between py-4 md:px-5 px-4 bg-transparent">
-		<nuxt-link to="/">
-			<img src="/lt2.svg" alt="logo" class=" md:w-auto w-32">
-		</nuxt-link>
+		<div class="flex flex-col">
+			<h3 class="font-cal max-w-36 sm:max-w-72 md:max-w-80 text-emphasis truncate font-semibold tracking-wide sm:text-xl md:block xl:max-w-full text-xl ">
+				Booking Type
+			</h3>
+			<span class="hidden text-sm md:block">Create different booking types where users can book you on</span>
+		</div>
+
 
 
 		<!-- <button  class="btn-primary" @click="useSignin().signOut()">
@@ -17,10 +21,11 @@
 
 <script setup lang="ts">
 
+import { usePageHeader } from '@/composables/utils/header'
 import { useUser } from '@/composables/auth/user'
 import AvatarDropdown from '@/components/core/AvatarDropdown.vue'
 
-
+const { headstate } = usePageHeader()
 
 const { isLoggedIn } = useUser()
 </script>

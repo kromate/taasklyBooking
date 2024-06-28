@@ -1,14 +1,14 @@
 <template>
-	<footer class="sm:hidden fixed h-14 bottom-0 border border-dark  bg-light  inset-x-0 flex items-center justify-between px-5 z-[10] text-dark">
-		<nuxt-link v-for="n in routes" :key="n.name" :to="n.route" class="flex flex-col items-center">
+	<footer class="md:hidden fixed h-14 bottom-0 border border-dark  bg-light  inset-x-0 flex items-center justify-between px-5 z-[10] text-dark">
+		<nuxt-link v-for="n in routes" :key="n.name" :to="n.route" class="flex flex-col justify-center items-center">
 			<component :is="n.icon" class="w-5" />
-			<p class="text-xs font-medium">
-				{{ n.name }}
+			<p class="text-xs  block truncate w-auto">
+				{{ truncateString(n.name, 10) }}
 			</p>
 		</nuxt-link>
 		<div class="flex flex-col items-center" @click="drawerFunction()">
 			<component :is="Menu" class="w-5" />
-			<p class="text-xs font-medium">
+			<p class="text-xs ">
 				more
 			</p>
 		</div>
@@ -16,10 +16,12 @@
 </template>
 
 <script setup lang="ts">
-
 import { Menu } from 'lucide-vue-next'
+import { truncateString } from '@/composables/utils/formatter'
 
-Menu
+
+
+
 
 type RouteType = {
     name: string,

@@ -12,7 +12,7 @@
 			</div>
 			<ModalBase />
 		</div>
-		<LayoutBottomBar :drawer-function="useBottombarModal().toggleBottomMenu" :routes="mainBottomNavRoutes" />
+		<LayoutsBottomBar :drawer-function="useBottombarModal().toggleBottomMenu" :routes="mainBottomNavRoutes" />
 	</div>
 </template>
 
@@ -54,6 +54,10 @@ const mainBottomNavRoutes = dashboardRoutes().filter((route) => route.main === t
 	margin-left: min(20%, 15rem);
 
 	@media (max-width:1024px) {
+		margin-left: 3.5rem;
+		margin-right: 0;
+	}
+	@media (max-width:768px) {
 		margin-left: 0;
 		margin-right: 0;
 	}

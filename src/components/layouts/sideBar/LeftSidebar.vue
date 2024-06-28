@@ -1,30 +1,35 @@
 <template>
 	<aside
-		class="pc min-h-screen flex-col justify-between w-[20%] max-w-[15rem] bg-transparent  fixed inset-y-0 z-50 "
+		class="hidden md:flex min-h-screen flex-col justify-between max-w-[15rem] bg-transparent  fixed inset-y-0 z-50 w-[20%]  md:w-14 lg:w-[20%] "
 	>
 		<div class="h-full relative py-4 w-full">
-			<div class="w-full flex justify-start pl-6">
+			<div class="w-full flex justify-start ">
 				<img
 					src="/lt.svg"
 					alt="logo"
-					class="w-36"
+					class="w-36 pc pl-6"
+				>
+				<img
+					src="/og.png"
+					alt="logo"
+					class="w-8 mobile mx-auto"
 				>
 			</div>
 
-			<div class="relative mt-[40px] flex flex-col gap-2">
-				<div v-for="n in routes" :key="n.name" class="relative px-4">
-					<span class="w-full flex flex-col gap-4">
+			<div class="relative mt-[40px] flex flex-col lg:gap-2 gap-1">
+				<div v-for="n in routes" :key="n.name" class="relative lg:px-4">
+					<span class="w-full flex flex-col gap-4  px-2 lg:p-0">
 
 						<nuxt-link
 							:to="n.route"
-							class="flex items-center black use-hover"
+							class="flex items-center black use-hover "
 							:style="{ backgroundColor: $route.path === n.route ? n.bg : '',
 								color: $route.path === n.route ? n.color : '',
 								'--link-bg-color': $route.path === n.route ? n.color : ''
 							}"
 						>
-							<component :is="n.icon" class="mr-4 w-5" />
-							<p class="text-sm inter">
+							<component :is="n.icon" class="lg:mr-4 lg:ml-0 mx-auto lg:w-5 lg:h-5 w-[18px] h-[18px]" />
+							<p class="text-sm hidden lg:block">
 								{{ n.name }}
 							</p>
 						</nuxt-link>
@@ -65,11 +70,9 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
-:deep(.bg-shadow) {
-	box-shadow: 0px 2px 16px rgba(31, 41, 55, 0.12);
-}
-:deep(a, .btn_link) {
-	@apply text-grey_two w-full h-11 px-6 pr-3 text-4xl duration-75 rounded-md  ;
+
+:deep(a) {
+	@apply text-grey_two w-full lg:h-11 h-10 lg:px-6 lg:pr-3 text-4xl duration-75 rounded-md  ;
 &:hover.use-hover{
 	@apply bg-hover;
 }
