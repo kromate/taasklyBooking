@@ -5,7 +5,7 @@
 		:alt="name || 'avatar'"
 		:style="`width: ${size}px; height: ${size}px; object-fit: cover;`"
 		class="!max-w-[1920px] rounded-full border border-dark"
-		@click.stop="link ? $router.push(link) : null"
+		@click="link ? $router.push(link) : null"
 	>
 	<span
 		v-else
