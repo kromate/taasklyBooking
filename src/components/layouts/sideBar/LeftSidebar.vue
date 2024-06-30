@@ -41,14 +41,17 @@
 			</div>
 
 
-			<div class=" absolute bottom-6 flex flex-col gap-2 w-full p-4">
-				<slot name="footer" />
+			<div class=" absolute bottom-0 flex flex-col gap-2 w-full p-4">
+				<slot name="footer">
+					<AvatarDropdown />
+				</slot>
 			</div>
 		</div>
 	</aside>
 </template>
 
 <script lang="ts" setup>
+import AvatarDropdown from '@/components/core/AvatarDropdown.vue'
 
 
 type RouteType = {

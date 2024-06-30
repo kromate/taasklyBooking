@@ -1,33 +1,35 @@
 <template>
-	<header class="container flex items-center justify-between py-4 md:px-5 px-4 bg-transparent">
+	<header class="container flex items-center justify-between py-4 md:px-5 px-4 bg-transparent border-b md:border-none">
 		<div class="flex flex-col">
 			<h3 class="font-cal max-w-36 sm:max-w-72 md:max-w-80 text-emphasis truncate font-semibold tracking-wide sm:text-xl md:block xl:max-w-full text-xl ">
-				Booking Type
+				{{ headstate.title.value }}
 			</h3>
-			<span class="hidden text-sm md:block">Create different booking types where users can book you on</span>
+			<span class="hidden text-sm md:block">
+				{{ headstate.description.value }}
+			</span>
 		</div>
 
 
+		<div class="w-auto md:hidden block">
+			<AvatarDropdown />
+		</div>
 
-		<!-- <button  class="btn-primary" @click="useSignin().signOut()">
-			logout
-		</button> -->
-		<AvatarDropdown v-if="isLoggedIn" />
-		<nuxt-link v-else to="/auth/login" class="btn-primary">
-			Login
-		</nuxt-link>
+
+		<button class="btn-primary hidden md:flex" @click="headstate.btnCall.value">
+			{{ headstate.btnText.value }}
+		</button>
 	</header>
 </template>
 
 <script setup lang="ts">
 
 import { usePageHeader } from '@/composables/utils/header'
-import { useUser } from '@/composables/auth/user'
+
 import AvatarDropdown from '@/components/core/AvatarDropdown.vue'
 
 const { headstate } = usePageHeader()
 
-const { isLoggedIn } = useUser()
+
 </script>
 
 <style scoped>

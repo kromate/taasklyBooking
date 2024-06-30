@@ -8,8 +8,8 @@ export const dashboardRoutes = () => [
 		route: '/booking-types',
 		main: true,
 		type: 'service',
-		bg: '#F7F4FF',
-		color: '#4F1DEE'
+		bg: '#e5e7eb',
+		color: '#18181B'
 	},
 			{
 		icon: Calendar,
@@ -17,8 +17,8 @@ export const dashboardRoutes = () => [
 		route: '/bookings',
 		main: true,
 		type: 'service',
-		bg: '#F7F4FF',
-		color: '#4F1DEE'
+		bg: '#e5e7eb',
+		color: '#18181B'
 	},
 	{
 		icon: Clock,
@@ -26,8 +26,8 @@ export const dashboardRoutes = () => [
 		route: '/availability',
 		main: true,
 		type: 'service',
-		bg: '#F7F4FF',
-		color: '#4F1DEE'
+		bg: '#e5e7eb',
+		color: '#18181B'
 	},
 
 	{
@@ -36,16 +36,16 @@ export const dashboardRoutes = () => [
 		route: '/contacts',
 		main: true,
 		type: 'all',
-		bg: '#F7F4FF',
-		color: '#4F1DEE'
+		bg: '#e5e7eb',
+		color: '#18181B'
 	},
 	{
 		icon: Settings,
 		name: 'Settings',
 		route: '/settings',
 		type: 'all',
-		bg: '#F7F4FF',
-		color: '#4F1DEE'
+		bg: '#e5e7eb',
+		color: '#18181B'
 	}
 
 ]

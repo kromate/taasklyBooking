@@ -3,13 +3,13 @@
 		v-if="src"
 		:src="src"
 		:alt="name || 'avatar'"
-		:style="`width: ${size}px; height: ${size}px; object-fit: cover;`"
+		:style="`width: ${size}px; height: ${size}px; min-width: ${size}px; min-height: ${size}px; object-fit: cover;`"
 		class="!max-w-[1920px] rounded-full border border-dark"
 		@click="link ? $router.push(link) : null"
 	>
 	<span
 		v-else
-		:style="`width: ${size}px; height: ${size}px; object-fit: cover; background-color:${bg}; color:${color}; border-color: ${color}`"
+		:style="`width: ${size}px; height: ${size}px; min-width: ${size}px; min-height: ${size}px; object-fit: cover; background-color:${bg}; color:${color}; border-color: ${color}`"
 		class="flex items-center justify-center uppercase   border-[1.5px] border-dark text-dark bg-light font-bold rounded-full"
 		@click="link ? $router.push(link) : null"
 	>

@@ -1,5 +1,11 @@
 
-export const useCustomHead = ({ title, desc, img }) => {
+
+type customHeadTypes = {
+  title: string
+  desc?: string
+  img?: string
+}
+export const useCustomHead = ({ title, desc, img }:customHeadTypes) => {
   useHead({
     title,
     meta: [
