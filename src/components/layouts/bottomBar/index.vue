@@ -6,7 +6,7 @@
 				{{ truncateString(n.name, 10) }}
 			</p>
 		</nuxt-link>
-		<div class="flex flex-col items-center" @click="drawerFunction()">
+		<div class="flex flex-col items-center text-light_grey " @click="drawerFunction()">
 			<component :is="Menu" class="w-5" />
 			<p class="text-xs ">
 				more
@@ -51,3 +51,25 @@ const props = defineProps({
 })
 
 </script>
+
+
+<style scoped lang="scss">
+
+a {
+	@apply text-light_grey ;
+&:hover.use-hover{
+	@apply bg-hover;
+}
+}
+
+
+/* exact link will show the primary color for only the exact matching link */
+a.router-link-exact-active {
+	@apply text-dark font-semibold  ;
+
+}
+
+:deep(:focus) {
+	outline: none;
+}
+</style>

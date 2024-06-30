@@ -39,7 +39,8 @@ watch(() => useRoute().name, () => {
 
 
 definePageMeta({
-	layout: 'dashboard'
+	layout: 'dashboard',
+	middleware: 'is-authenticated'
 })
 </script>
 

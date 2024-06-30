@@ -11,8 +11,8 @@ export const useFetchAvailabilities = () => {
     const fetchAvailabilities = async () => {
         loading.value = true
         try {
+            console.log(user_id.value!)
             await getFirestoreSubCollection('users', user_id.value!, 'availability', availabilities)
-            console.log(availabilities.value)
             loading.value = false
         } catch (e: any) {
             loading.value = false
