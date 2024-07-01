@@ -1,3 +1,5 @@
+import { useAlert } from '@/composables/core/notification'
+
 export const convertTo12HourFormat = (time: string): string => {
   const [hours, minutes] = time.split(':').map(Number)
   const period = hours < 12 ? 'AM' : 'PM'
@@ -165,4 +167,20 @@ export const formatDateString = (dateStr: string, options: Intl.DateTimeFormatOp
 
 
   return new Intl.DateTimeFormat('en-US', options).format(date)
+}
+
+export const validate_data = (data: Record<string, any>, ignoreKeys: string[] = []) => {
+	for (const key in data) {
+		if (data.hasOwnProperty(key) && !ignoreKeys.includes(key)) {
+			const value = data[key]
+			if (!value) {
+				useAlert().openAlert({ type: 'ERROR', msg: `Error: ${key} is required` })
+				return false
+			}
+			if (typeof value === 'object') {
+				validate_data(value, ignoreKeys)
+			}
+		}
+	}
+	return true
 }

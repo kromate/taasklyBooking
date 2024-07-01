@@ -1,28 +1,18 @@
 <template>
 	<main class="flex flex-col gap-4 p-4">
 		Event Types
-
-		{{ bookingTypes }}
 	</main>
 </template>
 
 <script setup lang="ts">
 import { usePageHeader } from '@/composables/utils/header'
-import { useFetchbookingTypes } from '@/composables/dashboard/bookingTypes/fetch'
-
-
-const { bookingTypes, fetchbookingTypes, loading } = useFetchbookingTypes()
-
-onMounted(() => {
-	fetchbookingTypes()
-})
 
 definePageMeta({
 	layout: 'dashboard',
 	middleware: ['is-authenticated', () => {
 usePageHeader().setPageHeader({
-	title: 'Booking Types',
-	description: 'Configure the types of bookings you offer.',
+	title: 'Edit Booking Types',
+	description: 'Edit the booking you offer',
 	btnText: 'create  ',
 	btnCall: () => useRouter().push('/booking-types/create'),
 	shouldShowFab: true,
