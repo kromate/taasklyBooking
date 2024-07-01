@@ -1,19 +1,21 @@
 <template>
-	<div class="flex w-full h-screen bg-light relative  md:py-0  px-0 overflow-y-hidden ">
-		<LayoutsSideBarLeftSidebar :routes="mainShowRoutes" />
+	<ClientOnly>
+		<div class="flex w-full h-screen bg-light relative  md:py-0  px-0 overflow-y-hidden ">
+			<LayoutsSideBarLeftSidebar :routes="mainShowRoutes" />
 
-		<div class="relative bg-light page w-full border-x border-dark mx  h-screen sm:h-auto   overflow-hidden">
-			<LayoutsDashboadHeader :is-business="false" />
-			<Alert />
-			<div class="w-full h-full relative  overflow-x-hidden bg-light   pb-40">
-				<section class="flex-col flex items-stretch">
-					<slot />
-				</section>
+			<div class="relative bg-light page w-full border-x border-dark mx  h-screen sm:h-auto   overflow-hidden">
+				<LayoutsDashboadHeader :is-business="false" />
+				<Alert />
+				<div class="w-full h-full relative  overflow-x-hidden bg-light   pb-40">
+					<section class="flex-col flex items-stretch">
+						<slot />
+					</section>
+				</div>
+				<ModalBase />
 			</div>
-			<ModalBase />
+			<LayoutsBottomBar :drawer-function="useBottombarModal().toggleBottomMenu" :routes="mainBottomNavRoutes" />
 		</div>
-		<LayoutsBottomBar :drawer-function="useBottombarModal().toggleBottomMenu" :routes="mainBottomNavRoutes" />
-	</div>
+	</ClientOnly>
 </template>
 
 
@@ -21,6 +23,7 @@
 import { useBottombarModal } from '@/composables/core/modals'
 import { dashboardRoutes } from '@/composables/utils/menu/dashboard'
 import { useUser } from '@/composables/auth/user'
+
 
 
 const { isLoggedIn } = useUser()

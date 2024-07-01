@@ -19,7 +19,7 @@ export const useDeleteAvailability = () => {
 	const deleteAvailability = async () => {
 		loading.value = true
 		try {
-			await deleteFirestoreSubCollectionDocument('businesses', user_id.value!, 'availability', deleteAvailabilityData.value.id)
+			await deleteFirestoreSubCollectionDocument('users', user_id.value!, 'availability', deleteAvailabilityData.value.id)
 			loading.value = false
 			useConfirmationModal().closeAlert()
 			useAlert().openAlert({ type: 'SUCCESS', msg: 'Availability Deleted successfully' })

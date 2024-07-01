@@ -53,16 +53,22 @@ const { availabilities, fetchAvailabilities, loading } = useFetchAvailabilities(
 fetchAvailabilities()
 
 
+
+
+
+definePageMeta({
+	layout: 'dashboard',
+	middleware: ['is-authenticated', () => {
 usePageHeader().setPageHeader({
 	title: 'Availability',
 	description: 'Configure times when you are available for bookings.',
 	btnText: 'Add Availability',
-	btnCall: () => useRouter().push('/availability/create')
-})
+	btnCall: () => useRouter().push('/availability/create'),
+	shouldShowFab: true,
+	shouldShowTab: usePageHeader().isLargeScreen.value
 
-definePageMeta({
-	layout: 'dashboard',
-	middleware: 'is-authenticated'
+})
+	}]
 })
 </script>
 

@@ -2,7 +2,6 @@
 	<div class="auth-box">
 		<img src="/lt2.svg" alt="logo">
 		<h1 class="text-2xl text-dark text-center font-semibold  tracking-wide">
-			<!-- <icon class="w-7 cursor-pointer absolute left-0 " name="back" @click="useAuthModal().openLogout()" /> -->
 			Create a profile
 		</h1>
 

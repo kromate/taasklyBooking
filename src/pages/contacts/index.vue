@@ -7,10 +7,20 @@
 </template>
 
 <script setup lang="ts">
+import { usePageHeader } from '@/composables/utils/header'
 
 definePageMeta({
 	layout: 'dashboard',
-	middleware: ['is-authenticated']
+	middleware: ['is-authenticated', () => {
+usePageHeader().setPageHeader({
+	title: 'Contacts',
+	description: 'Record of individuals who have booked with you',
+
+	shouldShowFab: false,
+	shouldShowTab: false
+
+})
+	}]
 })
 </script>
 
