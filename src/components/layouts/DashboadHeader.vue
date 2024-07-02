@@ -1,5 +1,5 @@
 <template>
-	<header class="container flex items-center justify-between py-4 md:px-5 px-4 sm:px-0 bg-transparent border-b">
+	<header class=" flex items-center justify-between py-4 md:px-5 px-4 bg-transparent border-b">
 		<div class="flex flex-col">
 			<h3 class="font-cal max-w-36 sm:max-w-72 md:max-w-80 text-emphasis truncate font-semibold tracking-wide sm:text-xl md:block xl:max-w-full text-xl ">
 				{{ headstate.title.value }}

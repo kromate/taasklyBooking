@@ -184,3 +184,12 @@ export const validate_data = (data: Record<string, any>, ignoreKeys: string[] = 
 	}
 	return true
 }
+
+
+export const transformString = (inputString: string): string => {
+    const trimmedString = inputString.trim()
+    const lowercaseString = trimmedString.toLowerCase()
+    const transformedString = lowercaseString.replace(/ /g, '-')
+
+    return transformedString
+}

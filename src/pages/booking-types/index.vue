@@ -1,14 +1,13 @@
 <template>
 	<main class="flex flex-col gap-4 p-4">
-		Event Types
-
-		{{ bookingTypes }}
+		<TypeList :booking-types="bookingTypes" />
 	</main>
 </template>
 
 <script setup lang="ts">
 import { usePageHeader } from '@/composables/utils/header'
 import { useFetchbookingTypes } from '@/composables/dashboard/bookingTypes/fetch'
+import TypeList from '@/components/dashboard/bookingTypes/TypeList.vue'
 
 
 const { bookingTypes, fetchbookingTypes, loading } = useFetchbookingTypes()

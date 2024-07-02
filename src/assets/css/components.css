@@ -143,6 +143,11 @@
     .mobile {
         @apply !flex lg:!hidden;
     }
+
+    .card_btn{
+    @apply flex gap-2 items-center text-sm font-medium  border border-line   hover:btn_shadow px-2 py-1 rounded-md
+}
+
 input:disabled,
 textarea:disabled,
 select:disabled {

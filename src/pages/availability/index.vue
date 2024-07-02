@@ -2,7 +2,7 @@
 	<main class="flex flex-col gap-4 p-4">
 		<Skeleton v-if="loading" height="100px" />
 		<section v-if="availabilities.length " class="flex flex-col gap-4">
-			<article v-for="period in availabilities" :key="period.id" class="flex flex-col p-4 gap-2 border border-dark rounded">
+			<article v-for="period in availabilities" :key="period.id" class="flex flex-col p-4 gap-2 border border-line rounded">
 				<header class="flex items-center justify-between w-full mb-3">
 					<h2 class="font-semibold md:text-xl ">
 						{{ period.name }}
