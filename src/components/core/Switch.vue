@@ -30,6 +30,12 @@ import { Switch, SwitchLabel, SwitchGroup } from '@headlessui/vue'
 
 const model = defineModel({ type: Boolean })
 
+const emit = defineEmits(['update'])
+
+watch(model, (value) => {
+	emit('update', value)
+})
+
 const props = defineProps({
 	label: {
 		type: String,

@@ -4,22 +4,22 @@ import { useAlert } from '@/composables/core/notification'
 import { useConfirmationModal } from '@/composables/core/confirmation'
 import { useUser } from '@/composables/auth/user'
 
-const deleteOfferingData = ref()
+const deleteBookingTypeData = ref()
 
 
-export const useDeleteOffering = () => {
+export const useDeleteBookingType = () => {
 	const loading = ref(false)
 	    const { id: user_id } = useUser()
 
-	const setDeleteOfferingId = (data: Record<string, any>) => {
-		deleteOfferingData.value = data
+	const setDeleteBookingTypeData = (data: Record<string, any>) => {
+		deleteBookingTypeData.value = data
 
-		        useConfirmationModal().openAlert({ type: 'Alert', title: 'Delete Type', desc: `Are you sure you want to delete  ${deleteOfferingData.value.name} `, call_function: deleteOffering, loading })
+		useConfirmationModal().openAlert({ type: 'Alert', title: 'Delete Type', desc: `Are you sure you want to delete  ${deleteBookingTypeData.value.name} `, call_function: deleteBookingType, loading })
 	}
-	const deleteOffering = async () => {
+	const deleteBookingType = async () => {
 		loading.value = true
 		try {
-			await deleteFirestoreSubCollectionDocument('users', user_id.value!, 'booking_types', deleteOfferingData.value.id)
+			await deleteFirestoreSubCollectionDocument('users', user_id.value!, 'booking_types', deleteBookingTypeData.value.id)
 			loading.value = false
 			useConfirmationModal().closeAlert()
 			useAlert().openAlert({ type: 'SUCCESS', msg: 'Booking type Deleted successfully' })
@@ -28,5 +28,5 @@ export const useDeleteOffering = () => {
 			useAlert().openAlert({ type: 'ERROR', msg: `Error: ${e.message}` })
 		}
 	}
-	return { loading, deleteOffering, setDeleteOfferingId }
+	return { loading, deleteBookingType, setDeleteBookingTypeData }
 }

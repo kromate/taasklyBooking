@@ -1,6 +1,9 @@
 <template>
 	<main class="flex flex-col gap-4 p-4">
-		<TypeList :booking-types="bookingTypes" />
+		<TypeList v-if="!loading" :booking-types="bookingTypes" />
+		<div v-else class="flex flex-col gap-4">
+			<Skeleton v-for="n in 3" :key="n" height="122px" radius="6px" />
+		</div>
 	</main>
 </template>
 
@@ -22,7 +25,7 @@ definePageMeta({
 usePageHeader().setPageHeader({
 	title: 'Booking Types',
 	description: 'Configure the types of bookings you offer.',
-	btnText: 'create  ',
+	btnText: 'Add Booking',
 	btnCall: () => useRouter().push('/booking-types/create'),
 	shouldShowFab: true,
 	shouldShowTab: usePageHeader().isLargeScreen.value

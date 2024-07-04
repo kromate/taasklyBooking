@@ -6,12 +6,12 @@ import { convertObjWithRefToObj } from '@/composables/utils/formatter'
 import { useUser } from '@/composables/auth/user'
 
 
+const loading = ref(false)
 
-
-export const useEditServiceOffering = () => {
+export const useEditBookingType = () => {
     const { createBookingTypeForm, resetForm, seletecAvailability } = useCreateBookingType()
     const { bookingType, fetchBookingTypeById, loading: idLoading } = useFetchBookingTypeById()
-    const loading = ref(false)
+
 
     const { id: user_id } = useUser()
 
@@ -31,7 +31,7 @@ export const useEditServiceOffering = () => {
         resetForm()
     }
 
-    const initOfferingEdit = async (id: string) => {
+    const initBookingTypeEdit = async (id: string) => {
         if (!id) return
         await fetchBookingTypeById(id)
         createBookingTypeForm.name.value = bookingType.value.name
@@ -39,8 +39,15 @@ export const useEditServiceOffering = () => {
         createBookingTypeForm.duration.value = bookingType.value.duration
         createBookingTypeForm.availability_id.value = bookingType.value.availability_id
         createBookingTypeForm.price.value = bookingType.value.price
-        createBookingTypeForm.visible.value = bookingType.value.visible
+        createBookingTypeForm.public.value = bookingType.value.public
     }
 
-    return { loading, edit, initOfferingEdit, idLoading }
+    const togglePublic = async (data, isPublic) => {
+        await updateFirestoreSubDocument('users', user_id.value!, 'booking_types', data.id, { public: isPublic })
+        useAlert().openAlert({ type: 'SUCCESS', msg: `Booking type ${isPublic ? 'Enabled' : 'Disabled'} successfully!` })
+    }
+
+    return { loading, edit, initBookingTypeEdit, idLoading, togglePublic }
 }
+
+

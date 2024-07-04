@@ -9,9 +9,11 @@
 			</span>
 		</div>
 
-		<button v-if="headstate.shouldShowTab.value && headstate.btnText.value" class="btn-primary" @click="headstate.btnCall.value">
-			{{ headstate.btnText.value }}
+		<button v-if="headstate.shouldShowTab.value && headstate.btnText.value" class="btn-primary" :disabled="headstate.loading.value" @click="headstate.btnCall.value">
+			<span v-if="!headstate.loading.value">	{{ headstate.btnText.value }}</span>
+			<Spinner v-else />
 		</button>
+
 		<div v-else class="w-auto md:hidden block">
 			<AvatarDropdown />
 		</div>

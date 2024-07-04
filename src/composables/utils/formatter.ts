@@ -170,17 +170,28 @@ export const formatDateString = (dateStr: string, options: Intl.DateTimeFormatOp
 }
 
 export const validate_data = (data: Record<string, any>, ignoreKeys: string[] = []) => {
-	for (const key in data) {
-		if (data.hasOwnProperty(key) && !ignoreKeys.includes(key)) {
-			const value = data[key]
-			if (!value) {
-				useAlert().openAlert({ type: 'ERROR', msg: `Error: ${key} is required` })
-				return false
-			}
-			if (typeof value === 'object') {
-				validate_data(value, ignoreKeys)
+	const missingKeys: string[] = []
+
+	const checkData = (data: Record<string, any>, parentKey = '') => {
+		for (const key in data) {
+			if (data.hasOwnProperty(key) && !ignoreKeys.includes(key)) {
+				const value = data[key]
+				const fullKey = parentKey ? `${parentKey}.${key}` : key
+				if (!value) {
+					missingKeys.push(fullKey)
+				}
+				if (typeof value === 'object' && value !== null) {
+					checkData(value, fullKey)
+				}
 			}
 		}
+	}
+
+	checkData(data)
+
+	if (missingKeys.length > 0) {
+		useAlert().openAlert({ type: 'ERROR', msg: `Error: ${missingKeys.join(', ')} are required` })
+		return false
 	}
 	return true
 }

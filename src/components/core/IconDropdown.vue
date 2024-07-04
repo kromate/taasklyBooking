@@ -1,6 +1,6 @@
 <template>
 	<div class="relative" @click.stop>
-		<DropdownMenuRoot v-slot="{open}">
+		<DropdownMenuRoot v-slot="{open}" :modal="false">
 			<DropdownMenuTrigger as-child>
 				<button
 					class="flex outline-none items-center font-normal p-1 border rounded border-dark center card_btn"
@@ -14,9 +14,9 @@
 				</button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent class="z-10 mt-1 absolute -right-4 ">
+			<DropdownMenuContent class="z-10  absolute -right-4 ">
 				<div
-					class="start-0 z-10 mt-2 rounded-md border border-line bg-white shadow-lg"
+					class="start-0 z-10 mt-1 rounded-md border border-line bg-white shadow-lg"
 					:class="[className, index > 1 ? 'bottom-8' : '']" role="menu"
 				>
 					<div class="p-2 gap-0.5 flex flex-col items-start w-full">
