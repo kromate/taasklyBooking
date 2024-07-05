@@ -9,7 +9,8 @@ export default {
   dir: {
     layouts: './src/layouts',
     pages: './src/pages',
-    middleware: './src/middlewares'
+    middleware: './src/middlewares',
+    plugins: './src/plugins'
   },
   components: [
     '@/components',

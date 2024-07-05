@@ -36,7 +36,6 @@ export const useSignin = () => {
 
       loading.value = false
     } catch (err) {
-      console.error('Google Sign-In Error:', err)
       loading.value = false
     }
   }
@@ -50,7 +49,7 @@ export const useSignin = () => {
       location.reload()
       useAlert().openAlert({ type: 'SUCCESS', msg: 'Signed out successfully' })
     } catch (err) {
-      console.error('Sign Out Error:', err)
+
     } finally {
       loading.value = false
     }

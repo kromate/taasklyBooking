@@ -148,6 +148,10 @@
     @apply flex gap-2 items-center text-sm font-medium  border border-line   hover:btn_shadow px-2 py-1 rounded-md
 }
 
+    .page-title {
+        @apply text-dark font-bold text-2xl;
+    }
+
 input:disabled,
 textarea:disabled,
 select:disabled {
