@@ -1,13 +1,19 @@
 
 
 <template>
-	<div>
-		bookings
-	</div>
+	<main>
+		{{ bookingIsEmpty }}
+		<DashboardBookingsList :bookings="fetchedBookings" />
+	</main>
 </template>
 
 <script setup lang="ts">
 import { usePageHeader } from '@/composables/utils/header'
+import { useFetchBookings } from '@/composables/dashboard/bookings/fetch'
+
+
+const { bookingIsEmpty, fetchUserBookings, fetchedBookings } = useFetchBookings()
+fetchUserBookings()
 
 definePageMeta({
 	layout: 'dashboard',

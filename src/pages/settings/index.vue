@@ -6,6 +6,8 @@
 			<ProfilePhoto v-if="userProfile" :photo-url="userProfile.photo_url" :folder-name="`bookings/users/profile/${user_id}`" @update="updatePhoto" />
 		</div>
 
+
+
 		<span class="flex items-center justify-between my-4 mt-12">
 			<h1 class="page-title">
 				Personalize

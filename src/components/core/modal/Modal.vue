@@ -149,6 +149,7 @@ const closeBtnPressed = () => {
 .isNotFullHeight{
 	@apply h-auto w-[90vw] sm:w-[470px] rounded-sm;
 	border-radius: 0.375rem;
+	height: auto !important;
 }
 
 .bg-sidebar {

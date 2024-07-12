@@ -5,6 +5,7 @@ import Logout from '@/components/modals/auth/logout.vue'
 
 // ==================== CORE ===============================
 import Confirmation from '@/components/modals/core/Confirmation.vue'
+import LoadingVerification from '@/components/modals/core/loading.vue'
 
 // ==================== BOTTOMBAR ===============================
 import BottomMenu from '@/components/layouts/bottomBar/modal/Main.vue'
@@ -12,12 +13,12 @@ import BottomMenu from '@/components/layouts/bottomBar/modal/Main.vue'
 
 
 type AuthTypes = 'Logout'
-type CoreTypes = 'Confirmation'
+type CoreTypes = 'Confirmation' | 'LoadingVerification'
 type BottombarTypes = 'BottomMenu'
 
 
 const AuthModals = { Logout } as Record<AuthTypes, any>
-const CoreModals = { Confirmation } as Record<CoreTypes, any>
+const CoreModals = { Confirmation, LoadingVerification } as Record<CoreTypes, any>
 const BottombarModals = { BottomMenu } as Record<BottombarTypes, any>
 
 

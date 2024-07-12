@@ -1,5 +1,5 @@
 <template>
-	<main class=" h-full container grid md:grid-cols-2 gap-12 items-center justify-center  md:py-32 py-10">
+	<main class=" h-full container grid lg:grid-cols-2 gap-12 items-center justify-start  md:py-32 py-10">
 		<section class="md:text-start text-center px-4">
 			<h1 class="md:text-7xl text-5xl font-extrabold mb-4 pathway leading-[1.2]">
 				Booking Simplified
@@ -15,10 +15,8 @@
 			</div>
 		</section>
 
-		<section class="flex center items-start h-full">
-			<div class="flex flex-col max-w-lg w-full gap-4 max-h-[410px] overflow-auto hide-scrollbar px-4 md:p-5 ">
-				-
-			</div>
+		<section class="flex center items-start relative h-full m-5 ">
+			<img src="/hero.png" class="w-full absolute lg:-top-[160px] ">
 		</section>
 	</main>
 </template>

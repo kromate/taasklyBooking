@@ -22,21 +22,30 @@
 					<IconDropdown :children="dropdownChildren()" :data="type" />
 				</div>
 			</div>
-			<div class="flex items-center gap-1 text-xs bg-subtle text-emphasis py-1 px-1.5 rounded bg-hover ">
-				<Clock :size="16" />
-				{{ type.duration }}m
-			</div>
+			<footer class="flex gap-4">
+				<div class="flex items-center gap-1 text-xs bg-subtle text-emphasis py-1 px-1.5 rounded bg-hover ">
+					<Clock :size="16" />
+					{{ type.duration }}m
+				</div>
+				<div class="flex items-center gap-1 text-xs bg-subtle text-emphasis py-1 px-1.5 rounded bg-hover ">
+					<Banknote :size="16" />
+					{{ type.price ? convertToCurrency(type.price) : 'Free' }}
+				</div>
+			</footer>
 		</article>
 	</section>
 </template>
 
 <script setup lang="ts">
 import { useWindowSize } from '@vueuse/core'
-import { Clock, ExternalLink, Link, Edit, Trash } from 'lucide-vue-next'
+import { Clock, ExternalLink, Link, Edit, Trash, Banknote } from 'lucide-vue-next'
 import { useDeleteBookingType } from '@/composables/dashboard/bookingTypes/delete'
 import { useUser } from '@/composables/auth/user'
 import { useCopyToClipboard } from '@/composables/utils/share'
 import { useEditBookingType } from '@/composables/dashboard/bookingTypes/edit'
+import { convertToCurrency } from '@/composables/utils/currency'
+
+
 
 
 const { togglePublic } = useEditBookingType()

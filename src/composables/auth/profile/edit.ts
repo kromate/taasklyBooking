@@ -62,6 +62,8 @@ export const useUpdateUserProfile = () => {
             await updateFirestoreDocument('users', user_id.value!, {
                 photo_url: url ?? null
             })
+            userProfileForm.photo_url.value = url
+
             loading.value = false
             useAlert().openAlert({ type: 'SUCCESS', msg: 'Profile photo updated successfully' })
             fetchUserProfile(user_id.value!)

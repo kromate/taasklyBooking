@@ -8,6 +8,7 @@
 			name="phone"
 			autocomplete="off"
 			:placeholder="placeholder"
+			minlength="8"
 			type="number"
 			class="input-field pl-[132px] !outline-none"
 			:disabled="disabled"

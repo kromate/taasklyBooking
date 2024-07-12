@@ -26,17 +26,19 @@ const { id: user_id } = useUser()
 }
 
 
-export const useFetchMainBookingTypeById = () => {
-    const fetchMainBookingTypeById = async (id: string) => {
+export const useFetchPublicBookingTypeById = () => {
+    const fetchPublicBookingTypeById = async (user_id: string, id: string) => {
         loading.value = true
+        // console.log('fetchPublicBookingTypeById', user_id, id)
+            if (process.server) return
             try {
-            await getSingleFirestoreDocument('bookingTypes', id, bookingType)
+            await getSingleFirestoreSubDocument('users', user_id, 'booking_types', id, bookingType)
             loading.value = false
         } catch (e: any) {
             loading.value = false
-            useAlert().openAlert({ type: 'ERROR', msg: `Error: ${e.message}`, addrs: 'useFetchMainBookingTypeById' })
+            useAlert().openAlert({ type: 'ERROR', msg: `Error: ${e.message}`, addrs: 'useFetchPublicBookingTypeById' })
         }
     }
 
-    return { bookingType, loading, fetchMainBookingTypeById }
+    return { bookingType, loading, fetchPublicBookingTypeById }
 }
