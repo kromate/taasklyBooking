@@ -2,7 +2,7 @@
 
 <template>
 	<div>
-		intergations
+		Coming soon
 	</div>
 </template>
 

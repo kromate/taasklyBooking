@@ -1,39 +1,18 @@
-
-
-
 import { booking_create_utils } from './create_utils'
 import { convertObjWithRefToObj } from '@/composables/utils/formatter'
 import { useUser } from '@/composables/auth/user'
 import { useAlert } from '@/composables/core/notification'
 import { useLoadingNotification } from '@/composables/core/verificationLoader'
 import { callFirebaseFunction } from '@/firebase/functions'
-
-import { percentageOfAmount } from '@/composables/utils/currency'
 import { useFetchAvailabilityById } from '@/composables/dashboard/availability/id'
-
-
-
-
-
-
-watch([booking_create_utils.credientials.selectedDate, booking_create_utils.selectedBooking], (val) => {
-    if (booking_create_utils.credientials.selectedDate.value && booking_create_utils.selectedBooking.value?.business_id) {
-        const date = booking_create_utils.credientials.selectedDate.value.toString()
-        booking_create_utils.checkTimeAvailablity(booking_create_utils.selectedBooking.value?.business_id, date)
-    }
-}, { immediate: true })
-
-
-
-
-
-
+import { useMakePayment } from '@/composables/payment/paystack'
 
 
 
 export const useCreateBooking = () => {
-    // const { id: user_id, username, user, userProfile } = useUser()
     const loading = ref(false)
+
+    let sent_data
 
     const initBooking = async (data) => {
         if (!data) return
@@ -47,7 +26,7 @@ export const useCreateBooking = () => {
 
     const createBooking = async () => {
         try {
-            const sent_data = {
+            sent_data = {
                 ...convertObjWithRefToObj(booking_create_utils.credientials),
                 date: booking_create_utils.credientials.selectedDate.value.toString(),
                 time: booking_create_utils.credientials.selectedTime.value.value,
@@ -60,17 +39,38 @@ export const useCreateBooking = () => {
                 booking_name: booking_create_utils.selectedBooking.value.name
             }
 
-            console.log(sent_data)
 
 
+            if (sent_data.price && sent_data.price > 0) {
+                const { makePayment } = await useMakePayment(handlePaymentClose, handlePaymentCallback)
+                makePayment(sent_data.price, { channel: 'BOOKING_PAYMENT', bookingId: booking_create_utils.selectedBooking.value.id })
+            } else {
+                await proceedWithBooking(sent_data)
+            }
+        } catch (e: any) {
+            useAlert().openAlert({ type: 'ERROR', msg: e.msg, addrs: 'useCreateBooking 2' })
+            loading.value = false
+            useLoadingNotification().closeLoader()
+        }
+    }
+
+    const handlePaymentClose = () => {
+        useAlert().openAlert({ type: 'ERROR', msg: 'Payment Failed' })
+        loading.value = false
+        useLoadingNotification().closeLoader()
+    }
+
+    const handlePaymentCallback = (data) => {
+        proceedWithBooking(sent_data, data)
+    }
+
+    const proceedWithBooking = async (sent_data_params, payment_data?: Record<string, any>) => {
+        try {
             useLoadingNotification().openLoader({ title: 'Creating Booking', msg: 'Please wait while we create your booking' })
-            const res = await callFirebaseFunction('createBooking', sent_data) as any
+            const res = await callFirebaseFunction('createBooking', { ...sent_data_params, payment_reference: payment_data?.reference }) as any
 
-            console.log(res)
 
             if (res.code === 200) {
-                // send_WA_Message(res.client_template)
-                // send_WA_Message(res.user_template)
                 useAlert().openAlert({ type: 'SUCCESS', msg: 'Booking Created Successfully' })
                 useLoadingNotification().closeLoader()
                 loading.value = false
@@ -87,9 +87,5 @@ export const useCreateBooking = () => {
         }
     }
 
-
-
-
     return { createBooking, initBooking }
 }
-

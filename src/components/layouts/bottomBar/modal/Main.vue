@@ -28,14 +28,15 @@
 import SideBarItem from './SideBarItem.vue'
 import { dashboardRoutes } from '@/composables/utils/menu/dashboard'
 import { modal } from '@/composables/core/modals'
-import { closeModalType } from '@/composables/core/modal'
+import { closeModalType, closeAllExtremes } from '@/composables/core/modal'
 
 const { stack, close } = modal
 
 watch(() => useRoute().path, () => {
 	if (stack.value.includes('BottombarMainBottomMenu')) {
 		closeModalType()
-		// close('BottombarMainBottomMenu')
+		closeModalType()
+		close('BottombarMainBottomMenu')
 	}
 })
 </script>

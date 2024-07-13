@@ -2,13 +2,12 @@
 	<div class="field relative">
 		<label for="phone">{{ label }}</label>
 		<input
-			v-bind="$attrs"
 			id="phone"
 			v-model="phone_number"
 			name="phone"
-			autocomplete="off"
 			:placeholder="placeholder"
-			minlength="8"
+			min="10"
+			minlength="10"
 			type="number"
 			class="input-field pl-[132px] !outline-none"
 			:disabled="disabled"

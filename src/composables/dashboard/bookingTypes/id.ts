@@ -7,9 +7,9 @@ const bookingType = ref()
 const loading = ref(false)
 
 export const useFetchBookingTypeById = () => {
-const { id: user_id } = useUser()
+    const { id: user_id } = useUser()
 
-        const fetchBookingTypeById = async (id:string) => {
+    const fetchBookingTypeById = async (id: string) => {
         loading.value = true
         try {
             await getSingleFirestoreSubDocument('users', user_id.value!, 'booking_types', id, bookingType)
@@ -29,9 +29,8 @@ const { id: user_id } = useUser()
 export const useFetchPublicBookingTypeById = () => {
     const fetchPublicBookingTypeById = async (user_id: string, id: string) => {
         loading.value = true
-        // console.log('fetchPublicBookingTypeById', user_id, id)
-            if (process.server) return
-            try {
+        if (process.server) return
+        try {
             await getSingleFirestoreSubDocument('users', user_id, 'booking_types', id, bookingType)
             loading.value = false
         } catch (e: any) {

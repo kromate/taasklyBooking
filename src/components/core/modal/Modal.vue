@@ -47,12 +47,12 @@
 import { PropType } from 'vue'
 import { X } from 'lucide-vue-next'
 import { modal } from '@/composables/core/modals'
+
 import { modalType, closeModalType, closeAllExtremes } from '@/composables/core/modal'
 
-watch(useRoute(), (from, to) => {
-	closeAllExtremes()
+watch(() => useRoute().path, (from, to) => {
+	modal.close('BottombarMainBottomMenu')
 	closeModalType()
-	emit('close')
 })
 const emit = defineEmits(['close'])
 type modalTypes = 'popup' | 'sidebar' | 'bottom_bar';
@@ -140,6 +140,9 @@ const closeBtnPressed = () => {
 </script>
 
 <style scoped lang="scss">
+    .bottombar {
+        @apply bg-light rounded-t-xl flex flex-col gap-2 sm:hidden fixed inset-x-0 bottom-[54px] w-full border border-dark p-4 pb-0 pt-6;
+    }
 .generator_tw{
 	@apply sm:w-[700px] sm:w-[400px]
 }
@@ -160,7 +163,7 @@ const closeBtnPressed = () => {
 	width: 100vw;
 	max-width: 100vw;
 	min-height: 100vh;
-	z-index: 101;
+	z-index: 30;
 	backdrop-filter: blur(1.5px);
 }
 

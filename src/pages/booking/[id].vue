@@ -40,6 +40,9 @@
 import { Check, ChevronLeft } from 'lucide-vue-next'
 import { useAPI } from '@/api_factory'
 import { useUser } from '@/composables/auth/user'
+import { convertToCurrency } from '@/composables/utils/currency'
+
+
 
 const { isLoggedIn } = useUser()
 
@@ -64,7 +67,7 @@ const bookingDetailsFormatted = computed(() => {
     { label: 'When', value: details.when },
     { label: 'Who', value: details.who },
     { label: 'Description', value: details.booking_desc },
-    { label: 'Price', value: details.price ? `${details.price}` : 'Free' },
+    { label: 'Price', value: details.price ? `${convertToCurrency(details.price)}` : 'Free' },
     { label: 'Additional Note', value: details.notes }
   ]
 })

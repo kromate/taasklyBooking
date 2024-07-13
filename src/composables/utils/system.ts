@@ -11,12 +11,17 @@ export const mini_id = (desiredLength = 8):string => {
 }
 
 
-export const insertScriptTag = (url: string): void => {
+export const insertScriptTag = async (url: string): Promise<void> => {
   if (process.server) return
   if (process.client && document.head.querySelectorAll(`script[src="${url}"]`).length > 0) return
-  const scriptTag = document.createElement('script')
-  scriptTag.src = url
-  document.body.appendChild(scriptTag)
+
+  return new Promise((resolve, reject) => {
+    const scriptTag = document.createElement('script')
+    scriptTag.src = url
+    scriptTag.onload = () => resolve()
+    scriptTag.onerror = () => reject(new Error(`Failed to load script: ${url}`))
+    document.body.appendChild(scriptTag)
+  })
 }
 
 export const isLargeScreen = useMediaQuery('(min-width: 1024px)')

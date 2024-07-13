@@ -1,4 +1,4 @@
-import { Link, Calendar, Clock, User, Settings, Grid3X3 } from 'lucide-vue-next'
+import { Link, Calendar, Clock, User, Settings, Grid3X3, Wallet } from 'lucide-vue-next'
 
 export const dashboardRoutes = () => [
 
@@ -10,7 +10,7 @@ export const dashboardRoutes = () => [
 		bg: '#e5e7eb',
 		color: '#18181B'
 	},
-			{
+	{
 		icon: Calendar,
 		name: 'Bookings',
 		route: '/bookings',
@@ -32,6 +32,14 @@ export const dashboardRoutes = () => [
 		name: 'Contacts',
 		route: '/contacts',
 		main: true,
+		type: 'all',
+		bg: '#e5e7eb',
+		color: '#18181B'
+	},
+	{
+		icon: Wallet,
+		name: 'Wallet',
+		route: '/wallet',
 		type: 'all',
 		bg: '#e5e7eb',
 		color: '#18181B'
