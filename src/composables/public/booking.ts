@@ -51,7 +51,7 @@ export const useCreateBooking = () => {
             useAlert().openAlert({ type: 'ERROR', msg: e.msg, addrs: 'useCreateBooking 2' })
             loading.value = false
             useLoadingNotification().closeLoader()
-        } 
+        }
     }
 
     const handlePaymentClose = () => {
