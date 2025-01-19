@@ -1,6 +1,7 @@
 <template>
 	<LayoutsHeroNav />
 	<PagesHero />
+	<PagesSteps />
 	<PagesFooter />
 </template>
 

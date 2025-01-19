@@ -1,16 +1,16 @@
 <template>
 	<section class="container xl:min-w-[1500px] md:px-12 px-4">
 		<div class=" relative overflow-hidden py-8 flex flex-col items-center text-center md:pb-[7.25rem] pb-[4rem]">
-			<h1 class="font-normal md:text-[64px] text-[32px] leading-[100%] tracking-[0%] max-w-[986px] mt-12">
-				Spend Your money and manage your finances stress free
+			<h1 class="font-medium md:text-6xl text-[32px] leading-[100%] tracking-[0%] max-w-3xl mt-12">
+				Turn your time into money
 			</h1>
 			<p class="md:text-xl max-w-[695px] mt-8">
-				Cashves Helps you see whats needed and whats not
+				Join thousands of entrepreneurs, professionals, and creators scheduling smarter with Bookins.africa
 			</p>
 			<div class="flex gap-4 mt-8">
 				<button class="btn-primary center gap-2">
 					Get started
-					<MoveRight :size="24" />
+					<MoveRight :size="16" />
 				</button>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 
 			<div class="flex flex-col md:flex-row gap-2 items-center justify-between text-sm leading-7 w-full">
 				<p class=" text-[#666666] text-xs">
-					All rights reserved by &copy; Cashves, Inc.
+					All rights reserved by &copy; Bookins.africa
 				</p>
 				<div class="flex items-center gap-4 text-xs">
 					<nuxt-link to="/privacy">

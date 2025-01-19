@@ -1,15 +1,17 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
-  font-family: 'Outfit', sans-serif;
+  /* font-family: "DM Sans", sans-serif; */
+  font-family: "Figtree", serif;
+  font-optical-sizing: auto;
 }
 
-.pathway {
- font-family: "Pathway Extreme", sans-serif;
- font-optical-sizing: auto;
+.figtree {
+  font-family: "Figtree", serif;
+  font-optical-sizing: auto;
 }
+
 
 
 html,

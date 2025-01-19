@@ -49,7 +49,7 @@
         @apply font-light text-2xl text-center flex w-full items-center justify-center relative text-dark;
     }
         .btn {
-            @apply rounded-lg px-7 py-4 flex justify-center items-center font-semibold text-sm tracking-wide disabled:bg-gray-500 disabled:text-dark disabled:cursor-not-allowed transite
+            @apply rounded-lg px-7 py-4 flex justify-center items-center font-semibold text-sm md:text-base tracking-wide disabled:bg-gray-500 disabled:text-dark disabled:cursor-not-allowed transite
         }
 
         .btn-sm {
