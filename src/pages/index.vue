@@ -1,6 +1,7 @@
 <template>
 	<LayoutsHeroNav />
 	<PagesHero />
+	<PagesFooter />
 </template>
 
 <script setup lang="ts">

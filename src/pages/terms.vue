@@ -13,9 +13,9 @@
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Introduction
 				</h2>
-				<p>Welcome to Taaskly.site (“Company”, “we”, “our”, “us”)! As you have just clicked our Terms of Service, please pause, grab a cup of coffee and carefully read the following pages. It will take you approximately 20 minutes.</p>
-				<p>These Terms of Service (“Terms”, “Terms of Service”) govern your use of our web pages located at https://taaskly.site operated by Taaskly.site.</p>
-				<p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Please read it here https://taaskly.site/privacy.</p>
+				<p>Welcome to Bookins.africa (“Company”, “we”, “our”, “us”)! As you have just clicked our Terms of Service, please pause, grab a cup of coffee and carefully read the following pages. It will take you approximately 20 minutes.</p>
+				<p>These Terms of Service (“Terms”, “Terms of Service”) govern your use of our web pages located at https://bookins.africa operated by Bookins.africa.</p>
+				<p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Please read it here https://bookins.africa/privacy.</p>
 				<p>Your agreement with us includes these Terms and our Privacy Policy (“Agreements”). You acknowledge that you have read and understood Agreements, and agree to be bound of them.</p>
 				<p>If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at support@taaskly.site so we can try to find a solution. These Terms apply to all visitors, users and others who wish to access or use Service.</p>
 				<p>Thank you for being responsible.</p>
@@ -39,21 +39,21 @@
 					Subscriptions
 				</h2>
 				<p>Some parts of Service are billed on a subscription basis (“Subscription(s)”). You will be billed in advance on a recurring and periodic basis (“Billing Cycle”). Billing cycles are set either on a monthly or annual basis, depending on the type of subscription plan you select when purchasing a Subscription.</p>
-				<p>At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or Taaskly.site cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting Taaskly.site customer support team.</p>
-				<p>A valid payment method, including credit card or PayPal, is required to process the payment for your subscription. You shall provide Taaskly.site with accurate and complete billing information including full name, address, state, zip code, telephone number, and a valid payment method information. By submitting such payment information, you automatically authorize Taaskly.site to charge all Subscription fees incurred through your account to any such payment instruments.</p>
-				<p>Should automatic billing fail to occur for any reason, Taaskly.site will issue an electronic invoice indicating that you must proceed manually, within a certain deadline date, with the full payment corresponding to the billing period as indicated on the invoice.</p>
+				<p>At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or Bookins.africa cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting Bookins.africa customer support team.</p>
+				<p>A valid payment method, including credit card or PayPal, is required to process the payment for your subscription. You shall provide Bookins.africa with accurate and complete billing information including full name, address, state, zip code, telephone number, and a valid payment method information. By submitting such payment information, you automatically authorize Bookins.africa to charge all Subscription fees incurred through your account to any such payment instruments.</p>
+				<p>Should automatic billing fail to occur for any reason, Bookins.africa will issue an electronic invoice indicating that you must proceed manually, within a certain deadline date, with the full payment corresponding to the billing period as indicated on the invoice.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Free Trial
 				</h2>
-				<p>Taaskly.site may, at its sole discretion, offer a Subscription with a free trial for a limited period of time (“Free Trial”).</p>
+				<p>Bookins.africa may, at its sole discretion, offer a Subscription with a free trial for a limited period of time (“Free Trial”).</p>
 				<p>You may be required to enter your billing information in order to sign up for Free Trial.</p>
-				<p>If you do enter your billing information when signing up for Free Trial, you will not be charged by Taaskly.site until Free Trial has expired. On the last day of Free Trial period, unless you cancelled your Subscription, you will be automatically charged the applicable Subscription fees for the type of Subscription you have selected.</p>
-				<p>At any time and without notice, Taaskly.site reserves the right to (i) modify Terms of Service of Free Trial offer, or (ii) cancel such Free Trial offer.</p>
+				<p>If you do enter your billing information when signing up for Free Trial, you will not be charged by Bookins.africa until Free Trial has expired. On the last day of Free Trial period, unless you cancelled your Subscription, you will be automatically charged the applicable Subscription fees for the type of Subscription you have selected.</p>
+				<p>At any time and without notice, Bookins.africa reserves the right to (i) modify Terms of Service of Free Trial offer, or (ii) cancel such Free Trial offer.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Fee Changes
 				</h2>
-				<p>Taaskly.site, in its sole discretion and at any time, may modify Subscription fees for the Subscriptions. Any Subscription fee change will become effective at the end of the then-current Billing Cycle.</p>
-				<p>Taaskly.site will provide you with a reasonable prior notice of any change in Subscription fees to give you an opportunity to terminate your Subscription before such change becomes effective.</p>
+				<p>Bookins.africa, in its sole discretion and at any time, may modify Subscription fees for the Subscriptions. Any Subscription fee change will become effective at the end of the then-current Billing Cycle.</p>
+				<p>Bookins.africa will provide you with a reasonable prior notice of any change in Subscription fees to give you an opportunity to terminate your Subscription before such change becomes effective.</p>
 				<p>Your continued use of Service after Subscription fee change comes into effect constitutes your agreement to pay the modified Subscription fee amount.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Refunds
@@ -65,7 +65,7 @@
 				<p>Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material (“Content”). You are responsible for Content that you post on or through Service, including its legality, reliability, and appropriateness.</p>
 				<p>By posting Content on or through Service, You represent and warrant that: (i) Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and (ii) that the posting of your Content on or through Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person or entity. We reserve the right to terminate the account of anyone found to be infringing on a copyright.</p>
 				<p>You retain any and all of your rights to any Content you submit, post or display on or through Service and you are responsible for protecting those rights. We take no responsibility and assume no liability for Content you or any third party posts on or through Service. However, by posting Content using Service you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through Service. You agree that this license includes the right for us to make your Content available to other users of Service, who may also use your Content subject to these Terms.</p>
-				<p>Taaskly.site has the right but not the obligation to monitor and edit all Content provided by users. In addition, Content found on or through this Service are the property of Taaskly.site or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.</p>
+				<p>Bookins.africa has the right but not the obligation to monitor and edit all Content provided by users. In addition, Content found on or through this Service are the property of Bookins.africa or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Prohibited Uses
 				</h2>
@@ -112,7 +112,7 @@
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Intellectual Property
 				</h2>
-				<p>Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Taaskly.site and its licensors. Service is protected by copyright, trademark, and other laws of foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Taaskly.site.</p>
+				<p>Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Bookins.africa and its licensors. Service is protected by copyright, trademark, and other laws of foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Bookins.africa.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Copyright Policy
 				</h2>
@@ -142,8 +142,8 @@
 				<h2 class="text-3xl text-gray-900 dark:text-white">
 					Links To Other Web Sites
 				</h2>
-				<p>Our Service may contain links to third party web sites or services that are not owned or controlled by Taaskly.site.</p>
-				<p>Taaskly.site has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.</p>
+				<p>Our Service may contain links to third party web sites or services that are not owned or controlled by Bookins.africa.</p>
+				<p>Bookins.africa has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.</p>
 				<p>YOU ACKNOWLEDGE AND AGREE THAT TAASKLY.SITE SHALL NOT BE RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY DAMAGE OR LOSS CAUSED OR ALLEGED TO BE CAUSED BY OR IN CONNECTION WITH USE OF OR RELIANCE ON ANY SUCH CONTENT, GOODS OR SERVICES AVAILABLE ON OR THROUGH ANY SUCH THIRD PARTY WEB SITES OR SERVICES.</p>
 				<p>WE STRONGLY ADVISE YOU TO READ THE TERMS OF SERVICE AND PRIVACY POLICIES OF ANY THIRD PARTY WEB SITES OR SERVICES THAT YOU VISIT.</p>
 				<h2 class="text-3xl text-gray-900 dark:text-white">
