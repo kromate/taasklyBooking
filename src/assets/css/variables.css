@@ -1,5 +1,5 @@
 :root {
-    --primary: #000000;
+    --primary: #2336DC;
     --secondary: #000000;
     --secondaryLight: #ccc2ef;
     --light_primary: #c4c4d0;
@@ -15,7 +15,7 @@
     --soft_purple: #b5afff;
     --baby_purple: #766cff;
     --dark_purple: #0e0ba1;
-    --line: #737882c9;
+    --line: #CFD7FF;
     --hover: #eaebec99;
     --greenx: #28a737;
 }
