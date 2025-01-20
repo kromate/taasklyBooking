@@ -2,9 +2,9 @@
 	<section class=" py-">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="text-center flex flex-col items-center w-full">
-				<span class="px-4 py-2 rounded">
+				<!-- <span class="px-4 py-2 rounded">
 					steps
-				</span>
+				</span> -->
 				<h2 class="mt-8 text-4xl md:text-[56px]  font-semibold leading-[1] max-w-3xl text-gray-900">
 					Take control of your schedule, effortlessly
 				</h2>
