@@ -1,5 +1,5 @@
 <template>
-	<main class=" h-full container max-w-[1440px] grid lg:grid-cols-2 gap-9 items-center justify-start  md:py-32 py-10">
+	<main class=" h-full container max-w-[1440px] grid lg:grid-cols-2 gap-9 items-center justify-start  md:py-20 py-10">
 		<section class="md:text-start text-center px-4">
 			<h1>
 				<span class="heroTitle">Easy</span>
